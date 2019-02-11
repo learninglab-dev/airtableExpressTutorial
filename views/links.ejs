@@ -10,5 +10,14 @@
     <p>
       <%= message %>
     </p>
+    <ul>
+      <% for ( i=0; i<links.length; i++ ) {  %>
+        <li>
+          <a href="<%- links[i].url %>">
+            <%= links[i].text %>
+          </a>
+        </li>
+      <%  } %>
+    </ul>
   </body>
 </html>
