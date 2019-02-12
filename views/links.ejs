@@ -14,8 +14,8 @@
       <% for ( i=0; i<links.length; i++ ) {  %>
         <li>
           <a href="<%- links[i].url %>">
-            <%= links[i].text %>
-          </a>
+            <%= links[i].name %>
+          </a>: <%- links[i].notes %>
         </li>
       <%  } %>
     </ul>

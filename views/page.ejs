@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= data.title %></h1>
+    <p>Welcome to <%= data.title %></p>
+    <p>
+      <%= data.topText %>
+    </p>
+    <ul>
+      <% for ( i=0; i<data.resources.length; i++ ) {  %>
+        <li>
+          <a href="<%- data.resources[i].URL %>">
+            <%= data.resources[i].linkText %>
+          </a>: <%- data.resources[i].notes %>
+            <%= data.resources[i].name %>
+        </li>
+      <%  } %>
+    </ul>
+    <p>
+      <%= data.bottomText %>
+    </p>
+    <p style="{font-size: 8px;}">
+      <%= data.notes %>
+    </p>
+    <h3>embeds</h3>
+    <% for ( i=0; i<data.resources.length; i++ ) {  %>
+      <% if (data.resources[i].type.includes('YouTube')) { %>
+      <iframe
+        width="560"
+        height="315"
+        src="<%= data.resources[i].youTubeEmbedUrl %>"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
+    <%  }} %>
+  </body>
+</html>
